@@ -10,10 +10,16 @@ import './app.css';
 import '../app-header/app-header.css';
 import '../post-add-form/post-add-form.css';
 import '../post-list/post-list.css';
-import '../post-list-item/post-list-item.css';
+import '../post-list-item/post-list-item.sass';
 import '../post-status-filter/post-status-filter.css';
 import '../search-panel/search-panel.css';
+import styled from 'styled-components';
 
+
+const AppBlock = styled.div`
+    margin: 0 auto;
+    max-width: 800px;
+`
 
 const App = () => {
 
@@ -24,7 +30,7 @@ const App = () => {
     ];
     
     return(
-        <div className="app">            
+        <AppBlock>            
             <AppHeader/>
             <div className="search-panel d-flex">
                 <SearchPanel/>
@@ -32,7 +38,7 @@ const App = () => {
             </div>
             <PostList posts={data}/>
             <PostAddForm/>
-        </div>
+        </AppBlock>
     )
 }
 
